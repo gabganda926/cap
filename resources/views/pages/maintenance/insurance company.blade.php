@@ -1,810 +1,12 @@
-<!DOCTYPE html>
-<html>
+@extends('master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Maintenance - Insurance Company | CIMIS</title>
-    <!-- Favicon-->
-    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+@section('title','Insurance Company - Maintenance | i-Insure')
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+@section('maintenance','active')
 
-    <!-- Bootstrap Core Css -->
-    <link href="../../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+@section('inscomp','active')
 
-    <!-- Waves Effect Css -->
-    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
-
-    <!-- Animation Css -->
-    <link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
-
-    <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="../../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
-
-    <!-- Wait Me Css -->
-    <link href="../../../plugins/waitme/waitMe.css" rel="stylesheet" />
-
-    <!-- Bootstrap Select Css -->
-    <link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
-    <!-- Sweet Alert Css -->
-    <link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
-
-    <!-- JQuery DataTable Css -->
-    <link href="../../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- Custom Css -->
-    <link href="../../../css/style.css" rel="stylesheet">
-    <link href="../../../css/modal.css" rel="stylesheet">
-    <link href="../../../css/modal-list.css" rel="stylesheet">
-
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="../../../css/themes/all-themes.css" rel="stylesheet" />
-</head>
-
-<body class="theme-teal">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-teal">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
-        </div>
-        <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
-    <!-- #END# Search Bar -->
-    <!-- Top Bar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-            <img src="../../images/logo.png" width="48" height="48" alt="Compreline" style="float:left" />
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="cimis.php"><b>COMPRELINE | INSURANCE</b></a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                    <!-- #END# Call Search -->
-                    <!-- Notifications -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">notifications</i>
-                            <span class="label-count">7</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">NOTIFICATIONS</li>
-                            <li class="body">
-                                <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green" style="float:left;">
-                                                <i class="material-icons">person_add</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>12 new accounts added</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 14 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan" style="float:left;">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>4 payments made</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red" style="float:left;">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Egai Franco</b> deleted account</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange" style="float:left;">
-                                                <i class="material-icons">mode_edit</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Gerald</b> changed user type name</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey" style="float:left;">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Ma. Gabriella</b> added user type's<br/> description</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green" style="float:left;">
-                                                <i class="material-icons">cached</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Lyndan</b> updated client's <br/>cheque voucher</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-purple" style="float:left;">
-                                                <i class="material-icons">settings</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Settings updated</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- #END# Notifications -->
-                    <!-- Tasks -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">flag</i>
-                            <span class="label-count">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">TASKS</li>
-                            <li class="body">
-                                <ul class="menu tasks">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Footer display issue
-                                                <small>32%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Make new queries
-                                                <small>45%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Create new dashboard
-                                                <small>54%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Solve transition issue
-                                                <small>65%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Generate reports
-                                                <small>92%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- #END# Tasks -->
-                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- #Top Bar -->
-    <section>
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-            <!-- User Info -->
-            <div class="user-info">
-                <div class="image">
-                    <img src="../../images/user.png" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ma. Gabriella Rola</div>
-                    <div class="text" style="color: white;">Administrator</div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>My Account</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Switch Account</a></li>
-                            <!-- <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li> -->
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- #User Info -->
-
-            <!-- Menu -->
-            <div class="menu animated bounceInLeft active">
-                <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li>
-                        <a href="../../dashboard">
-                            <i class="material-icons">home</i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="active">
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">build</i>
-                            <span>Maintenance</span>
-                        </a>
-                        <ul class="ml-menu">                    
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">question_answer</i>
-                                    <span>QUOTATION</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="../../maintenance/sender">
-                                            <i class="material-icons">person</i>
-                                            <span>Sender</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../../maintenance/vehicle/types">
-                                            <i class="material-icons">directions_car</i>
-                                            <span>Vehicle Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="menu-toggle">
-                                            <i class="material-icons">view_comfy</i>
-                                            <span>Insurance Items</span>
-                                        </a>
-                                        <ul class="ml-menu">
-                                            <li>
-                                                <a href="../../maintenance/vehicle/model">Vehicle Model</a>
-                                            </li>
-                                            <li>
-                                                <a href="../../maintenance/vehicle/make">Vehicle Make</a>
-                                            </li>
-                                            <li>
-                                                <a href="../../maintenance/vehicle/accessories">Vehicle Accessories</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">credit_card</i>
-                                    <span>BILLING</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="../../maintenance/client/type">
-                                            <i class="material-icons">people_outline</i>
-                                            <span>Client Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../../maintenance/installment/type">
-                                            <i class="material-icons">dns</i>
-                                            <span>Installment Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../../maintenance/bank">
-                                            <i class="material-icons">account_balance</i>
-                                            <span>Bank</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">view_agenda</i>
-                                    <span>COMPLAINTS AND TRANSMITTAL</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="../../maintenance/complaint/type">
-                                            <i class="material-icons">subject</i>
-                                            <span>Complaint Type</span></a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="../../maintenance/courier">
-                                            <i class="material-icons">person_outline</i>
-                                            <span>Courier</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">beenhere</i>
-                                    <span>STATUS MAINTENANCE</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="material-icons">radio_button_unchecked</i>
-                                            <span>Status Category</span></a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#">
-                                            <i class="material-icons">radio_button_unchecked</i>
-                                            <span>Status</span></a>
-                                    </li>
-                                </ul>
-                            </li> -->
-                            
-                            
-                            <li>
-                                <a href="../../maintenance/policyno">
-                                    <i class="material-icons">confirmation_number</i>
-                                    <span>Policy Number</span></a>
-                            </li>
-                            <li class="active">
-                                <a href="../../maintenance/insurance/company">
-                                    <i class="material-icons">business</i>
-                                    <span>Insurance Company</span></a>
-                            </li>
-                            <li>
-                                <a href="../../maintenance/salesagent">
-                                    <i class="material-icons">perm_identity</i>
-                                    <span>Sales Agent</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../../maintenance/employee">
-                                    <i class="material-icons">supervisor_account</i>
-                                    <span>Employee</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../../maintenance/employee/type">
-                                    <i class="material-icons">person_outline</i>
-                                    <span>Employee Type</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">work</i>
-                            <span>Transactions</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="pages/transactions/admin/insurance.php">
-                                    <i class="material-icons">account_balance_wallet</i>
-                                    <span>Insurance Accounts</span>
-                                </a>
-                            </li>                    
-                            <li>
-                                <a href="pages/transactions/admin/claims.php">
-                                    <i class="material-icons">queue</i>
-                                    <span>Claims</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages/transactions/admin/tally.php">
-                                    <i class="material-icons">multiline_chart</i>
-                                    <span>Tally</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages/transactions/admin/transmittal.php">
-                                    <i class="material-icons">folder_shared</i>
-                                    <span>Transmittal</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages/transactions/admin/complaint.php">
-                                    <i class="material-icons">error_outline</i>
-                                    <span>Complaint</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">library_books</i>
-                            <span>Archives</span>
-                        </a>
-                        <ul class="ml-menu">                    
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">question_answer</i>
-                                    <span>QUOTATION</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="pages/archives/sender.php">
-                                            <i class="material-icons">person</i>
-                                            <span>Sender</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages/archives/vehicle type.php">
-                                            <i class="material-icons">directions_car</i>
-                                            <span>Vehicle Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="menu-toggle">
-                                            <i class="material-icons">view_comfy</i>
-                                            <span>Insurance Items</span>
-                                        </a>
-                                        <ul class="ml-menu">
-                                            <li>
-                                                <a href="pages/archives/vehicle model.php">Vehicle Model</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages/archives/vehicle make.php">Vehicle Make</a>
-                                            </li>
-                                            <li>
-                                                <a href="pages/archives/vehicle accessories.php">Vehicle Accessories</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">credit_card</i>
-                                    <span>BILLING</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="pages/archives/clientType.php">
-                                            <i class="material-icons">people_outline</i>
-                                            <span>Client Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages/archives/installment.php">
-                                            <i class="material-icons">dns</i>
-                                            <span>Installment Type</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages/archives/bank.php">
-                                            <i class="material-icons">account_balance</i>
-                                            <span>Bank</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">view_agenda</i>
-                                    <span>COMPLAINTS AND TRANSMITTAL</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="pages/archives/complaintType.php">
-                                            <i class="material-icons">subject</i>
-                                            <span>Complaint Type</span></a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="pages/archives/courier.php">
-                                            <i class="material-icons">person_outline</i>
-                                            <span>Courier</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">beenhere</i>
-                                    <span>STATUS MAINTENANCE</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="pages/archives/categoryStatus.php">
-                                            <i class="material-icons">radio_button_unchecked</i>
-                                            <span>Status Category</span></a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="pages/archives/courier.php">
-                                            <i class="material-icons">radio_button_unchecked</i>
-                                            <span>Status</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            
-                            
-                            <li>
-                                <a href="pages/archives/policy numbers.php">
-                                    <i class="material-icons">confirmation_number</i>
-                                    <span>Policy Number</span></a>
-                            </li>
-                            <li>
-                                <a href="pages/archives/insurance company.php">
-                                    <i class="material-icons">business</i>
-                                    <span>Insurance Company</span></a>
-                            </li>
-                            <li>
-                                <a href="pages/archives/salesAgent.php">
-                                    <i class="material-icons">perm_identity</i>
-                                    <span>Sales Agent</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages/archives/employee.php">
-                                    <i class="material-icons">supervisor_account</i>
-                                    <span>Employee</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pages/archives/employeeType.php">
-                                    <i class="material-icons">person_outline</i>
-                                    <span>Employee Type</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- #Menu -->
-            
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2016 <a href="javascript:void(0);">CIMIS</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.4
-                </div>
-            </div>
-            <!-- #Footer -->
-        </aside>
-        <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
-            <ul class="nav nav-tabs tab-nav-right" role="tablist">
-                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
-                    <ul class="demo-choose-skin">
-                        <li data-theme="red" class="active">
-                            <div class="red"></div>
-                            <span>Red</span>
-                        </li>
-                        <li data-theme="pink">
-                            <div class="pink"></div>
-                            <span>Pink</span>
-                        </li>
-                        <li data-theme="purple">
-                            <div class="purple"></div>
-                            <span>Purple</span>
-                        </li>
-                        <li data-theme="deep-purple">
-                            <div class="deep-purple"></div>
-                            <span>Deep Purple</span>
-                        </li>
-                        <li data-theme="indigo">
-                            <div class="indigo"></div>
-                            <span>Indigo</span>
-                        </li>
-                        <li data-theme="blue">
-                            <div class="blue"></div>
-                            <span>Blue</span>
-                        </li>
-                        <li data-theme="light-blue">
-                            <div class="light-blue"></div>
-                            <span>Light Blue</span>
-                        </li>
-                        <li data-theme="cyan">
-                            <div class="cyan"></div>
-                            <span>Cyan</span>
-                        </li>
-                        <li data-theme="teal">
-                            <div class="teal"></div>
-                            <span>Teal</span>
-                        </li>
-                        <li data-theme="green">
-                            <div class="green"></div>
-                            <span>Green</span>
-                        </li>
-                        <li data-theme="light-green">
-                            <div class="light-green"></div>
-                            <span>Light Green</span>
-                        </li>
-                        <li data-theme="lime">
-                            <div class="lime"></div>
-                            <span>Lime</span>
-                        </li>
-                        <li data-theme="yellow">
-                            <div class="yellow"></div>
-                            <span>Yellow</span>
-                        </li>
-                        <li data-theme="amber">
-                            <div class="amber"></div>
-                            <span>Amber</span>
-                        </li>
-                        <li data-theme="orange">
-                            <div class="orange"></div>
-                            <span>Orange</span>
-                        </li>
-                        <li data-theme="deep-orange">
-                            <div class="deep-orange"></div>
-                            <span>Deep Orange</span>
-                        </li>
-                        <li data-theme="brown">
-                            <div class="brown"></div>
-                            <span>Brown</span>
-                        </li>
-                        <li data-theme="grey">
-                            <div class="grey"></div>
-                            <span>Grey</span>
-                        </li>
-                        <li data-theme="blue-grey">
-                            <div class="blue-grey"></div>
-                            <span>Blue Grey</span>
-                        </li>
-                        <li data-theme="black">
-                            <div class="black"></div>
-                            <span>Black</span>
-                        </li>
-                    </ul>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="settings">
-                    <div class="demo-settings">
-                        <p>GENERAL SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Report Panel Usage</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" checked><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Email Redirect</span>
-                                <div class="switch">
-                                    <label><input type="checkbox"><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>SYSTEM SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Notifications</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" checked><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Auto Updates</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" checked><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>ACCOUNT SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Offline</span>
-                                <div class="switch">
-                                    <label><input type="checkbox"><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Location Permission</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" checked><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <!-- #END# Right Sidebar -->
-    </section>
-
+@section('body')
     <section class="content">
         <div class="container-fluid">
 
@@ -857,10 +59,16 @@
                                       $index = 1;
                                   ?>
                                       <tr>
-                                          <td><input type="checkbox" id="md_checkbox_21" class="filled-in chk-col-red checkCheckbox"/>
-                                <label for="md_checkbox_21"></label></td>
+                                          <td><input type="checkbox" id="{{ $companydata->comp_ID  }}" class="filled-in chk-col-red checkCheckbox" data-id = "{{ $companydata->comp_ID  }}"/>
+                                          <label for="{{ $companydata->comp_ID  }}"></label></td>
                                           <td>{{ $companydata->comp_name }}</td>
-                                          <td>{{ $Info->pinfo_first_name." ".$Info->pinfo_last_name }}</td>
+                                          <td>
+                                          @if($Info->pinfo_middle_name == null)
+                                          {{ $Info->pinfo_last_name.", ".$Info->pinfo_first_name}}
+                                          @else
+                                          {{ $Info->pinfo_last_name.", ".$Info->pinfo_first_name." ".$Info->pinfo_middle_name }}
+                                          @endif
+                                          </td>
                                           <td><div class="icon-button-demo">
                                             <button type="button" class="btn bg-light-green waves-effect" data-toggle="modal" data-target="#pnList"
                                             onclick = "
@@ -1028,6 +236,7 @@
                                           document.getElementById('aadd_city').value = city;
                                           document.getElementById('aadd_province').value = prov;
                                           document.getElementById('aadd_region').value = reg;
+                                          $('#aadd_region').val(reg).change();
                                           document.getElementById('aadd_zipcode').value = zipcode;">
                                               <i class="material-icons">remove_red_eye</i>
                                               <span>View</span>
@@ -1192,10 +401,26 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group form-float">
-                                            <div class="form-line">
-                                            <label class="form-label">Region</label>
-                                                <input id = "add_region" name = "add_region" type="text" class="form-control">
-                                            </div>
+                                            <select id = "add_region" name = "add_region" class="form-control show-tick" data-live-search="true">
+                                          <option selected value = "" style = "display: none;">-- Select Region --</option>
+                                                <option value = "I">Region I</option>
+                                                <option value = "II">Region II</option>
+                                                <option value = "III">Region III</option>
+                                                <option value = "IV-A">Region IV-A</option>
+                                                <option value = "IV-B">Region IV-B</option>
+                                                <option value = "V">Region V</option>
+                                                <option value = "VI">Region VI</option>
+                                                <option value = "VII">Region VII</option>
+                                                <option value = "VIII">Region VIII</option>
+                                                <option value = "IX">Region IX</option>
+                                                <option value = "X">Region X</option>
+                                                <option value = "XI">Region XI</option>
+                                                <option value = "XII">Region XII</option>
+                                                <option value = "XIII">Region XIII</option>
+                                                <option value = "ARMM">Region ARMM</option>
+                                                <option value = "CAR">Region CAR</option>
+                                                <option value = "NCR">Region NCR</option>\
+                                        </select>
                                         </div>
                                     </div>
 
@@ -1214,7 +439,51 @@
                                 </div>
                         </div>
                         <div class="modal-footer js-sweetalert">
-                            <button class="btn btn-primary waves-effect" type="submit" onclick="document.getElementById('time').value = formatDate(new Date());">SUBMIT</button>
+                            <button class="btn btn-primary waves-effect" type="button" onclick = "
+                            document.getElementById('time').value = formatDate(new Date());
+                            if($('#comp_add').valid())
+                            {
+                              swal({
+                                title: 'Are you sure?',
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#DD6B55',
+                                confirmButtonText: 'Continue',
+                                cancelButtonText: 'Cancel',
+                                closeOnConfirm: false,
+                                closeOnCancel: false
+                              },
+                              function(isConfirm){
+                                if (isConfirm) {
+                                  $('#comp_add').submit();
+                                  document.getElementById('comp_name').value = '';
+
+                                  document.getElementById('cPerson_first_name').value = '';
+                                  document.getElementById('cPerson_middle_name').value = '';
+                                  document.getElementById('cPerson_last_name').value = '';
+                                  document.getElementById('cPerson_email').value = '';
+                                  document.getElementById('cPerson_contact').value = '';
+
+                                  document.getElementById('add_blcknum').value = '';
+                                  document.getElementById('add_street').value = '';
+                                  document.getElementById('add_subdivision').value = '';
+                                  document.getElementById('add_brngy').value = '';
+                                  document.getElementById('add_district').value = '';
+                                  document.getElementById('add_city').value = '';
+                                  document.getElementById('add_province').value = '';
+                                  document.getElementById('add_region').value = '';
+                                  $('#add_region').val('').change();
+                                  document.getElementById('add_zipcode').value = '';
+                                } else {
+                                    swal({
+                                    title: 'Cancelled',
+                                    type: 'warning',
+                                    timer: 500,
+                                    showConfirmButton: false
+                                    });
+                                }
+                              });
+                            }">SUBMIT</button>
                             <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
                         </div>
                     </form>
@@ -1243,7 +512,6 @@
                         $('#aadd_district').prop('disabled', false);
                         $('#aadd_city').prop('disabled', false);
                         $('#aadd_province').prop('disabled', false);
-                        $('#aadd_region').prop('disabled', false);
                         $('#aadd_zipcode').prop('disabled', false);
                         $('#acPerson_first_name').prop('disabled', false);
                         $('#acPerson_middle_name').prop('disabled', false);
@@ -1262,21 +530,20 @@
                         $('#Edit').prop('disabled', false);
                         $('#Delete').prop('disabled', true);
                         $('#schange').show();
-                        $('#aadd_blcknum').prop('disabled', false);
-                        $('#aadd_street').prop('disabled', false);
-                        $('#aadd_subdivision').prop('disabled', false);
-                        $('#aadd_brngy').prop('disabled', false);
-                        $('#aadd_district').prop('disabled', false);
-                        $('#aadd_city').prop('disabled', false);
-                        $('#aadd_province').prop('disabled', false);
-                        $('#aadd_region').prop('disabled', false);
-                        $('#aadd_zipcode').prop('disabled', false);
-                        $('#acPerson_first_name').prop('disabled', false);
-                        $('#acPerson_middle_name').prop('disabled', false);
-                        $('#acPerson_last_name').prop('disabled', false);
-                        $('#acPerson_email').prop('disabled', false);
-                        $('#acPerson_contact').prop('disabled', false);
-                        $('#acomp_name').prop('disabled', false);
+                        $('#aadd_blcknum').prop('disabled', true);
+                        $('#aadd_street').prop('disabled', true);
+                        $('#aadd_subdivision').prop('disabled', true);
+                        $('#aadd_brngy').prop('disabled', true);
+                        $('#aadd_district').prop('disabled', true);
+                        $('#aadd_city').prop('disabled', true);
+                        $('#aadd_province').prop('disabled', true);
+                        $('#aadd_zipcode').prop('disabled', true);
+                        $('#acPerson_first_name').prop('disabled', true);
+                        $('#acPerson_middle_name').prop('disabled', true);
+                        $('#acPerson_last_name').prop('disabled', true);
+                        $('#acPerson_email').prop('disabled', true);
+                        $('#acPerson_contact').prop('disabled', true);
+                        $('#acomp_name').prop('disabled', true);
                         $('#schange').html('DELETE RECORD');
                         ">
                             <i class="material-icons">delete_sweep</i>
@@ -1425,10 +692,26 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group form-float">
-                                            <div class="form-line">
-                                            <label><small>Region :</small></label>
-                                                <input id = "aadd_region" name = "aadd_region" type="text" class="form-control" disabled="disable" >
-                                            </div>
+                                            <select id = "aadd_region" name = "aadd_region" class="form-control show-tick" data-live-search="true">
+                                          <option selected value = "" style = "display: none;">-- Select Region --</option>
+                                                <option value = "I">Region I</option>
+                                                <option value = "II">Region II</option>
+                                                <option value = "III">Region III</option>
+                                                <option value = "IV-A">Region IV-A</option>
+                                                <option value = "IV-B">Region IV-B</option>
+                                                <option value = "V">Region V</option>
+                                                <option value = "VI">Region VI</option>
+                                                <option value = "VII">Region VII</option>
+                                                <option value = "VIII">Region VIII</option>
+                                                <option value = "IX">Region IX</option>
+                                                <option value = "X">Region X</option>
+                                                <option value = "XI">Region XI</option>
+                                                <option value = "XII">Region XII</option>
+                                                <option value = "XIII">Region XIII</option>
+                                                <option value = "ARMM">Region ARMM</option>
+                                                <option value = "CAR">Region CAR</option>
+                                                <option value = "NCR">Region NCR</option>\
+                                        </select>
                                         </div>
                                     </div>
 
@@ -1453,7 +736,33 @@
                                 </div>
                         </div>
                         <div class="modal-footer js-sweetalert">
-                            <button id = "schange" class="btn btn-primary waves-effect" type="submit" style = "display: none;" onclick = "document.getElementById('atime').value = formatDate(new Date());">SAVE CHANGES</button>
+                            <button id = "schange" class="btn btn-primary waves-effect" style = "display: none;" type="button" onclick = "
+                            document.getElementById('atime').value = formatDate(new Date());
+                            if($('#comp_view').valid())
+                            {
+                              swal({
+                                title: 'Are you sure?',
+                                type: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#DD6B55',
+                                confirmButtonText: 'Continue',
+                                cancelButtonText: 'Cancel',
+                                closeOnConfirm: false,
+                                closeOnCancel: false
+                              },
+                              function(isConfirm){
+                                if (isConfirm) {
+                                  $('#comp_view').submit();
+                                } else {
+                                    swal({
+                                    title: 'Cancelled',
+                                    type: 'warning',
+                                    timer: 500,
+                                    showConfirmButton: false
+                                    });
+                                }
+                              });
+                            }">SAVE CHANGES</button>
                             <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
                         </div>
                     </form>
@@ -1508,51 +817,7 @@
         </div>
     </section>
 
-    <!-- Jquery Core Js -->
-    <script src="../../../plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="../../../plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Jquery Validation Plugin Css -->
-    <script src="../../../plugins/jquery-validation/jquery.validate.js"></script>
-
-    <!-- JQuery Steps Plugin Js -->
-    <script src="../../../plugins/jquery-steps/jquery.steps.js"></script>
-
-    <!-- Sweet Alert Plugin Js -->
-    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="../../../plugins/node-waves/waves.js"></script>
-
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="../../../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="../../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="../../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
-    <!-- Custom Js -->
-    <script src="../../../js/admin.js"></script>
-    <script src="../../../js/pages/tables/jquery-datatable.js"></script>
-    <script src="../../../js/pages/forms/form-validation.js"></script>
-
-    <!-- Demo Js -->
-    <script src="../../../js/demo.js"></script>
-
-
-<script>
+    <script>
         $.validator.addMethod("alphanumeric", function(value, element) {
             return this.optional(element) || /^[A-Za-z][A-Za-z0-9 '-.]*$/i.test(value);
          }, "This field must contain only letters, numbers, dashes, space, apostrophe or dot.");
@@ -1576,18 +841,22 @@
               // on the right side
               comp_name: {
                 required: true,
-                alpha:true
+                alpha:true,
+                maxlength: 30
               },
               cPerson_first_name:{
                 required: true,
-                alpha:true
+                alpha:true,
+                maxlength: 30
               },
               cPerson_middle_name:{
-                alpha:true
+                alpha:true,
+                maxlength: 20
               },
               cPerson_last_name:{
                 required: true,
-                alpha:true
+                alpha:true,
+                maxlength: 20
               },
               cPerson_contact:{
                 required: true,
@@ -1598,42 +867,54 @@
               cPerson_email:
               {
                 required: true,
-                email: true
+                email: true,
+                maxlength: 50
               },
               add_blcknum:{
                   blcknumber: true,
+                  maxlength: 10
               },
               add_street:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_subdivision:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_brngy:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_district:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_city:
               {
+                  required: true,
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_province:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               add_region:
               {
+                  required: true,
                   alphanumeric: true,
+                  maxlength: 11
               },
               add_zipcode:
               {
                   digits: true,
+                  maxlength: 4
               }
             },
             // Specify validation error messages
@@ -1675,18 +956,23 @@
               // of an input field. Validation rules are defined
               // on the right side
               acomp_name: {
-                required: true
+                required: true,
+                alpha:true,
+                maxlength: 30
               },
               acPerson_first_name:{
-                alpha: true,
-                required: true
+                required: true,
+                alpha:true,
+                maxlength: 30
               },
               acPerson_middle_name:{
-                alpha: true
+                alpha:true,
+                maxlength: 20
               },
               acPerson_last_name:{
-                alpha: true,
-                required: true
+                required: true,
+                alpha:true,
+                maxlength: 20
               },
               acPerson_contact:{
                 required: true,
@@ -1697,42 +983,54 @@
               acPerson_email:
               {
                 required: true,
-                email: true
+                email: true,
+                maxlength: 50
               },
               aadd_blcknum:{
                   blcknumber: true,
+                  maxlength: 10
               },
               aadd_street:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_subdivision:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_brngy:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_district:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_city:
               {
+                  required: true,
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_province:
               {
                   alphanumeric: true,
+                  maxlength: 20
               },
               aadd_region:
               {
+                  required: true,
                   alphanumeric: true,
+                  maxlength: 11
               },
               aadd_zipcode:
               {
                   digits: true,
+                  maxlength: 4
               }
             },
             // Specify validation error messages
@@ -1797,6 +1095,45 @@
       );
     });
 
+    $(".checkCheckbox").change(
+        function()
+        {
+          if ($('.checkCheckbox:checked').length > 0)
+          {
+               $("#delete_many").show();
+          }
+          else
+          {
+               $("#delete_many").hide();
+          }
+         }
+      );
+
+      $('#addCompModal').on('hidden.bs.modal', function() {
+        $('#comp_add').trigger('reset');
+      });
+
+      $('#largeModal').on('hidden.bs.modal', function() {
+          $('#comp_view').trigger('reset');
+          $('#Edit').prop('disabled', false);
+          $('#Delete').prop('disabled', false);
+          $('#schange').hide();
+          $('#aadd_blcknum').prop('disabled', true);
+          $('#aadd_street').prop('disabled', true);
+          $('#aadd_subdivision').prop('disabled', true);
+          $('#aadd_brngy').prop('disabled', true);
+          $('#aadd_district').prop('disabled', true);
+          $('#aadd_city').prop('disabled', true);
+          $('#aadd_province').prop('disabled', true);
+          $('#aadd_zipcode').prop('disabled', true);
+          $('#acPerson_first_name').prop('disabled', true);
+          $('#acPerson_middle_name').prop('disabled', true);
+          $('#acPerson_last_name').prop('disabled', true);
+          $('#acPerson_email').prop('disabled', true);
+          $('#acPerson_contact').prop('disabled', true);
+          $('#acomp_name').prop('disabled', true);
+      });
+
     function addZero(i) {
         if (i < 10) {
             i = "0" + i;
@@ -1827,24 +1164,34 @@
     table.column( 3 ).visible( false );
     $('#view_list').css('width', '100%');
 
+    var IDS;
+    var timenow = formatDate(new Date());
+    $('#delete_many').click(function(event){
+      IDS = $(".checkCheckbox:checked").map(function ()
+      {
+          return $(this).data('id')
+      }).get();
+    });
 
+    $('#delete_many').click(function(event){
+      event.preventDefault();
+          $.ajax({
 
-    // $(function() {
-    //     $('.column-id :checkbox').click(function() {
-    //         var myData;
-    //
-    //         $("input:checkbox[name=type]:checked").each(function(){
-    //               myData.push($(this).val());
-    //        });
-    //
-    //         $.ajax("/foo/bar", {
-    //             type: 'POST',
-    //             data: {myData:ArrayDelete}
-    //         });
-    //     });
-    // });
+              type: 'POST',
+              url: '/admin/maintenance/insurance/company/ardelete',
+              data: {asd:IDS, time:timenow},
+              success:function(xhr){
+                  console.log('success');
+                  console.log(xhr.responseText);
+                  window.location.reload();
+              },
+                error:function(xhr, ajaxOptions, thrownError,data){
+                  console.log(xhr.status);
+                  console.log(xhr.responseText);
+              }
+          });
+      });
 
 </script>
-</body>
 
-</html>
+@endsection
